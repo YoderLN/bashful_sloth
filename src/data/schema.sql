@@ -3,12 +3,12 @@ DROP TABLE IF EXISTS Moves;
 DROP TABLE IF EXISTS Types;
 
 CREATE TABLE IF NOT EXISTS Types(
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
     Type TEXT UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS Moves(
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INTEGER  PRIMARY KEY AUTOINCREMENT,
     MoveName TEXT UNIQUE NOT NULL,
     MoveType TEXT REFERENCES Types(Type),
     MovePower INT,
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Moves(
 );
 
 CREATE TABLE IF NOT EXISTS POKEMON(
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
     Name TEXT UNIQUE,
     Type1 TEXT REFERENCES Types(Type) NOT NULL,
     Type2 TEXT REFERENCES Types(Type) NOT NULL,
@@ -27,3 +27,18 @@ CREATE TABLE IF NOT EXISTS POKEMON(
     BaseSpeed INT
 );
 
+INSERT INTO Types(Type) VALUES('Normal'), 
+('Fire'), 
+('Water'), 
+('Electric'), 
+('Grass'), 
+('Ice'), 
+('Fighting'), 
+('Poison'),
+('Ground'),
+('Flying'),
+('Psychic'),
+('Bug'),
+('Rock'),
+('Ghost'),
+('Dragon');
