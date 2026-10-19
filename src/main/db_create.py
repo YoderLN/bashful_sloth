@@ -18,4 +18,6 @@ def db_create():
             schema = file.read()
 
     conn.executescript(schema)
+
+    return cursor
    
