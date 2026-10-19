@@ -6,8 +6,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome to the Dex, stay tuned for more in depth options." \
-    " /pokemon/name gets results based on pokemon name"
+    return """<pre>Welcome to the Pokedex API Project
+
+Currently Supported Endpoints
+
+pokemon_by_name
+
+pokemon_by_number
+
+pokemon_by_type
+
+moves_by_type</pre>"""
 
 @app.route("/pokemon_by_name/<name>")
 def show_pokemonInfoByName(name):
